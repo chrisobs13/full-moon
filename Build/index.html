@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+  <script src='assets/js/jquery-1.8.3.min.js'></script>
+<script src='assets/js/app.js'></script>
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href='http://fonts.googleapis.com/css?family=Averia+Libre:700,300,300italic' rel='stylesheet' type='text/css'>
+  <title>Is it a full moon?</title>
+</head>
+<body>
+<div id="top">
+	<h1>Is it a full moon?</h1>
+</div>
+<section id="answer">
+	<figure>
+		<img id="moon" src="http://placehold.it/300x300&text=moon"/>
+		<h2>Nope</h2>
+	</figure>
+	<p>
+		It is a rising gibbous moon.
+	</p>
+</section>
+<section id="next-last">
+	<aside>
+		<h4>Last Full Moon</h4>
+		<h3>May 24</h3> 
+	</aside>
+
+	<aside>
+		<h4>Next Full Moon</h4>
+		<h3>June 23</h3> 
+	</aside>
+</section>
+<footer>
+	<p>
+		Built by Chris OBrien and Rodrigo Passos.
+	</p>
+</footer>
+
+
+
+</body>
+
+</html>

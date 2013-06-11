@@ -1,0 +1,102 @@
+@mixin container($width){
+	margin: 1rem auto;
+	width:($width);
+	max-width:1020px;
+}
+
+@mixin center{
+	text-align:center;
+}
+
+@mixin averia{
+	font-family: 'Averia Libre', cursive;
+}
+
+@mixin border-box{
+	box-sizing: border-box;
+}
+
+$gray:#999;
+
+
+body{
+	background:#222;
+	color:$gray;
+	@include averia;
+}
+
+#top{
+	@include container(90%);
+	@include center;
+
+	h1{
+		font-size:2rem;
+		font-weight:normal;
+		margin-bottom:2rem;
+	}
+}
+
+#answer{
+	@include container(90%);
+	@include center;
+
+	figure{
+		@include center;
+		margin: 0 auto;
+	}
+
+	img{
+		display:inline-block;
+		height:8rem;
+		margin-right:1rem;
+		vertical-align:middle;	
+	}
+	
+	h2{
+		display:inline-block;
+		font-size:5rem;
+		vertical-align:middle;
+		margin:0;
+		padding:0;
+
+	}
+	p{
+		clear:both;
+		font-weight:300;
+	}
+}
+
+#next-last{
+	@include container(89%);
+
+	aside{
+		border:3px solid $gray;
+		border-radius: 3px;
+		@include center;
+		@include border-box;
+		width:46%;
+		margin:1%;
+		display:inline-block;	
+		
+		h4{
+			background:$gray;
+			color:#111;
+		}
+	}
+
+}
+
+
+footer{
+	clear:both;
+	background:#000;
+	margin-top:3rem;
+	margin-bottom:0;
+	p{
+		@include container(80%);
+		@include center;
+		padding:3rem 0 1rem;
+		margin-bottom:0;
+
+	}
+}
