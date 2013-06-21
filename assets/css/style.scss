@@ -19,30 +19,34 @@ $yellow-white:#FFFDED;
 
 
 html{
-	height:100%;
-	@include linear-gradient(#071b2a,#0c2d47);
+	min-height:100%;
+	background:#02080D;
+	-webkit-font-smoothing: antialiased;
 }
 
 
 body{
+	@include linear-gradient(#071b2a,#0c2d47);	
 	color:$yellow-white;
 	font-weight:300;
 	@include custom-font;
+
 }
 
 #top{
 	@include container(90%);
 	@include center;
+	margin-top:0;
+	padding:2rem 0 3rem;
 
 	h1{
 		font-size:2rem;
 		font-weight:normal;
-		margin-bottom:2rem;
 	}
 }
 
 p{
-	font-size:1.1rem;
+	font-size:1.3rem;
 }
 
 #answer{
@@ -73,24 +77,50 @@ p{
 	p{
 		clear:both;
 		font-weight:300;
+
+		a{
+			color: $yellow-white;
+			text-decoration:none;
+			border-bottom: 1px dashed rgba($yellow-white, .2);;
+			padding-bottom: .2rem;
+		}
 	}
 }
 
 #next-last{
 	@include container(89%);
+	margin: 5rem auto;
 
 	aside{
-		border:3px solid $yellow-white;
-		border-radius: 3px;
+		
 		@include center;
 		@include border-box;
-		width:46%;
-		margin:1%;
+		width:100%;
+		margin:3rem auto;
 		display:inline-block;	
 		
 		h4{
-			background:$yellow-white;
-			color:#111;
+			border-bottom: 1px solid rgba($yellow-white, .1);
+			font-size:2rem;
+			font-weight:100;
+			color: rgba($yellow-white, .7);
+			@include transition(all .2s ease-in);
+			padding-bottom:.3rem;
+
+		}
+
+		h3{
+			font-size:2rem;
+			font-weight:100;
+			padding-top:.3rem;			
+			color: rgba($yellow-white, .7);
+			@include transition(all .2s ease-in);
+		}
+	}
+
+	aside:hover{
+		h4,h3{
+			color:$yellow-white;
 		}
 	}
 
@@ -99,17 +129,41 @@ p{
 
 footer{
 	clear:both;
-	position: absolute;
-	bottom:0;
 	width:100%;
 	background: url(skyline.svg) bottom left repeat-x;
 	background-size: auto 100%;
+	@include center;
 	p{
-		@include container(80%);
-		@include center;
-		padding:9rem 0 2rem;
+		padding:11rem 0 2rem;
 		margin-bottom:0;
 		color:#0e3656;
+		font-size:1rem;
+		font-weight:700;
 
+		a{
+			color:lighten(#0e3656,5%);
+			text-decoration:none;
+			font-weight:700;
+		}
 	}
 }
+
+
+@media only screen and (min-width: 50rem) {
+	#next-last{
+
+	aside{
+		
+		@include center;
+		@include border-box;
+		width:47%;
+		margin:1%;
+		display:inline-block;
+		}
+	}	
+
+}
+
+
+
+
