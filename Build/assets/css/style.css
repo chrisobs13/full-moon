@@ -1,7 +1,14 @@
+html {
+  height: 100%;
+  background-color: #071b2a;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #071b2a), color-stop(100%, #0c2d47));
+  background-image: -webkit-linear-gradient(#071b2a, #0c2d47);
+  background-image: linear-gradient(#071b2a, #0c2d47); }
+
 body {
-  background: #222;
-  color: #999999;
-  font-family: 'Averia Libre', cursive; }
+  color: #fffded;
+  font-weight: 300;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 #top {
   margin: 1rem auto;
@@ -13,6 +20,9 @@ body {
     font-weight: normal;
     margin-bottom: 2rem; }
 
+p {
+  font-size: 1.1rem; }
+
 #answer {
   margin: 1rem auto;
   width: 90%;
@@ -20,7 +30,7 @@ body {
   text-align: center; }
   #answer figure {
     text-align: center;
-    margin: 0 auto; }
+    margin: 0 auto 3rem; }
   #answer img {
     display: inline-block;
     height: 8rem;
@@ -31,7 +41,8 @@ body {
     font-size: 5rem;
     vertical-align: middle;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    font-weight: 100; }
   #answer p {
     clear: both;
     font-weight: 300; }
@@ -41,7 +52,7 @@ body {
   width: 89%;
   max-width: 1020px; }
   #next-last aside {
-    border: 3px solid #999999;
+    border: 3px solid #fffded;
     border-radius: 3px;
     text-align: center;
     box-sizing: border-box;
@@ -49,18 +60,21 @@ body {
     margin: 1%;
     display: inline-block; }
     #next-last aside h4 {
-      background: #999999;
+      background: #fffded;
       color: #111; }
 
 footer {
   clear: both;
-  background: #000;
-  margin-top: 3rem;
-  margin-bottom: 0; }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: url(../img/skyline.svg) bottom left repeat-x;
+  background-size: auto 100%; }
   footer p {
     margin: 1rem auto;
     width: 80%;
     max-width: 1020px;
     text-align: center;
-    padding: 3rem 0 1rem;
-    margin-bottom: 0; }
+    padding: 9rem 0 2rem;
+    margin-bottom: 0;
+    color: #0e3656; }

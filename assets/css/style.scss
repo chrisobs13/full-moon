@@ -8,21 +8,26 @@
 	text-align:center;
 }
 
-@mixin averia{
-	font-family: 'Averia Libre', cursive;
+@mixin custom-font{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
-
 @mixin border-box{
 	box-sizing: border-box;
 }
 
-$gray:#999;
+$yellow-white:#FFFDED;
+
+
+html{
+	height:100%;
+	@include linear-gradient(#071b2a,#0c2d47);
+}
 
 
 body{
-	background:#222;
-	color:$gray;
-	@include averia;
+	color:$yellow-white;
+	font-weight:300;
+	@include custom-font;
 }
 
 #top{
@@ -36,13 +41,17 @@ body{
 	}
 }
 
+p{
+	font-size:1.1rem;
+}
+
 #answer{
 	@include container(90%);
 	@include center;
 
 	figure{
 		@include center;
-		margin: 0 auto;
+		margin: 0 auto 3rem;
 	}
 
 	img{
@@ -58,6 +67,7 @@ body{
 		vertical-align:middle;
 		margin:0;
 		padding:0;
+		font-weight:100;
 
 	}
 	p{
@@ -70,7 +80,7 @@ body{
 	@include container(89%);
 
 	aside{
-		border:3px solid $gray;
+		border:3px solid $yellow-white;
 		border-radius: 3px;
 		@include center;
 		@include border-box;
@@ -79,7 +89,7 @@ body{
 		display:inline-block;	
 		
 		h4{
-			background:$gray;
+			background:$yellow-white;
 			color:#111;
 		}
 	}
@@ -89,14 +99,17 @@ body{
 
 footer{
 	clear:both;
-	background:#000;
-	margin-top:3rem;
-	margin-bottom:0;
+	position: absolute;
+	bottom:0;
+	width:100%;
+	background: url(skyline.svg) bottom left repeat-x;
+	background-size: auto 100%;
 	p{
 		@include container(80%);
 		@include center;
-		padding:3rem 0 1rem;
+		padding:9rem 0 2rem;
 		margin-bottom:0;
+		color:#0e3656;
 
 	}
 }
