@@ -40,7 +40,10 @@ moon_day = (today)->
         phase++
 
     # 29.53059 days per lunar month
+    # return float from 0 to 1, where both are the new moon and 0.5 is the full moon
     return (((thisJD - oldJ) / 29.53059))
+
 
 $ ->
 
+	console.log moon_day(new Date())

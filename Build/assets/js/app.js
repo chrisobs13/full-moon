@@ -41,6 +41,8 @@
     return (thisJD - oldJ) / 29.53059;
   };
 
-  $(function() {});
+  $(function() {
+    return console.log(moon_day(new Date()));
+  });
 
 }).call(this);
