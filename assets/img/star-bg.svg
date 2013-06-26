@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>star-bg</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page 1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.195951705">
+        <g id="star-bg" fill="#D8D8D8">
+            <path d="M54,28.6333103 L51,28 L51.6938434,31 L51,34 L54.4127729,33.3095236 L57,34 L56.2403359,31 L57,28 L54,28.6333103 Z M54,28.6333103" id="Rectangle 2" transform="translate(54.000000, 31.000000) rotate(-315.000000) translate(-54.000000, -31.000000) "></path>
+            <path d="M87,73.1590584 L85.1464466,72.767767 L85.5751385,74.6213203 L85.1464466,76.4748737 L87.2550322,76.0482621 L88.8535534,76.4748737 L88.3841941,74.6213203 L88.8535534,72.767767 L87,73.1590584 Z M87,73.1590584" id="Rectangle 2 copy" transform="translate(87.000000, 74.621320) rotate(-315.000000) translate(-87.000000, -74.621320) "></path>
+            <path d="M101.242641,220.63331 L98.2426407,220 L98.9364841,223 L98.2426407,226 L101.655414,225.309524 L104.242641,226 L103.482977,223 L104.242641,220 L101.242641,220.63331 Z M101.242641,220.63331" id="Rectangle 2 copy" transform="translate(101.242641, 223.000000) rotate(-315.000000) translate(-101.242641, -223.000000) "></path>
+            <path d="M215,125.159058 L213.146447,124.767767 L213.575139,126.62132 L213.146447,128.474874 L215.255032,128.048262 L216.853553,128.474874 L216.384194,126.62132 L216.853553,124.767767 L215,125.159058 Z M215,125.159058" id="Rectangle 2 copy 2" transform="translate(215.000000, 126.621320) rotate(-315.000000) translate(-215.000000, -126.621320) "></path>
+            <path d="M265.62132,42.1590584 L263.767767,41.767767 L264.196459,43.6213203 L263.767767,45.4748737 L265.876353,45.0482621 L267.474874,45.4748737 L267.005514,43.6213203 L267.474874,41.767767 L265.62132,42.1590584 Z M265.62132,42.1590584" id="Rectangle 2 copy 3" transform="translate(265.621320, 43.621320) rotate(-315.000000) translate(-265.621320, -43.621320) "></path>
+            <path d="M263,254.159058 L261.146447,253.767767 L261.575139,255.62132 L261.146447,257.474874 L263.255032,257.048262 L264.853553,257.474874 L264.384194,255.62132 L264.853553,253.767767 L263,254.159058 Z M263,254.159058" id="Rectangle 2 copy 3" transform="translate(263.000000, 255.621320) rotate(-315.000000) translate(-263.000000, -255.621320) "></path>
+        </g>
+    </g>
+</svg>

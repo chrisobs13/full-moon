@@ -26,7 +26,9 @@ html{
 
 
 body{
-	@include linear-gradient(#071b2a,#0c2d47);	
+	@include background-image(url("star-bg.svg"), url("star-bg.svg"), url("star-bg.svg"),linear-gradient(#071b2a 0, #0c2d47 100%));
+	background-position: top left, top right, center center;
+	background-size:100px 100px, 50px 50px, 150px 150px, 100% 100%;
 	color:$yellow-white;
 	font-weight:300;
 	@include custom-font;
@@ -55,7 +57,7 @@ p{
 
 	figure{
 		@include center;
-		margin: 0 auto 3rem;
+		margin: 0 auto 2rem;
 	}
 
 	svg{
@@ -66,13 +68,13 @@ p{
 		vertical-align:middle;
 
 		.moonback {
-			opacity: 0.02;
-			fill: #FFFDE9;
+			opacity: 1.0;
+			fill: #0c2d47;
 		}
 
 		.moonfront {
 			opacity: 0.9;
-			fill: #FFFDE9;
+			fill: #FFFDED;
 		}
 	}
 
@@ -107,7 +109,7 @@ p{
 		@include center;
 		@include border-box;
 		width:100%;
-		margin:3rem auto;
+		margin:2rem auto;
 		display:inline-block;	
 		
 		h4{
@@ -147,20 +149,20 @@ footer{
 	p{
 		padding:11rem 0 2rem;
 		margin-bottom:0;
-		color:#0e3656;
+		color:lighten(#0e3656,10%);
 		font-size:1rem;
-		font-weight:700;
 
 		a{
-			color:lighten(#0e3656,5%);
 			text-decoration:none;
-			font-weight:700;
+			color:lighten(#0e3656,10%);			
+			font-weight:500;
+			border-bottom: 1px dashed #0e3656;
 		}
 	}
 }
 
 
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 40rem) {
 	#next-last{
 
 	aside{
