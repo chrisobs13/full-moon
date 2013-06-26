@@ -47,6 +47,8 @@ draw_moon = (phase)->
 	sweep = []
 	mag
 	full_moon
+	phase_moon_name
+
 
 	if phase <= 0.25
 		sweep = [ 1, 0 ]
@@ -64,26 +66,40 @@ draw_moon = (phase)->
 		exit
 
 
-	if phase <= 0.0625 or phase > 0.9375
+	if phase <= 0.0625
 		full_moon = "Nope"
+		phase_moon_name = "dark moon"
 	else if phase <= 0.1875
 		full_moon = "Nope"
+		phase_moon_name = "waning crescent moon"
 	else if phase <= 0.3125
 		full_moon = "Nope"
+		phase_moon_name = "last quarter moon"
 	else if phase <= 0.4375
 		full_moon = "Nope"
+		phase_moon_name = "waning gibbous moon"
 	else if phase <= 0.5625
 		full_moon = "Yep"
+		phase_moon_name = "full moon"
 	else if phase <= 0.6875
 		full_moon = "Nope"
+		phase_moon_name = "waxing gibbous moon"
 	else if phase <= 0.8125
 		full_moon = "Nope"
+		phase_moon_name = "first quarter moon"
 	else if phase <= 0.9375
 		full_moon = "Nope"
+		phase_moon_name = "waxing crescent moon"
+	else if phase > 0.9375
+		full_moon = "Nope"
+		phase_moon_name = "new moon"
 
 
 	full_moon_tag = document.getElementById("full_moon")
 	full_moon_tag.innerText = full_moon
+
+	phase_moon_name_tag = document.getElementById("moon_phase_name")
+	phase_moon_name_tag.innerText = phase_moon_name
 
 	svg = document.getElementById("moon")
 
