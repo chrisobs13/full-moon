@@ -64,6 +64,16 @@ p{
 		width:8rem;
 		margin-right:1rem;
 		vertical-align:middle;
+
+		.moonback {
+			opacity: 0.02;
+			fill: #FFFDE9;
+		}
+
+		.moonfront {
+			opacity: 0.9;
+			fill: #FFFDE9;
+		}
 	}
 
 	h2{

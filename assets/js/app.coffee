@@ -118,16 +118,13 @@ draw_moon = (phase)->
 		# Moon background
 		back  = document.createElementNS(xmlns, 'path')
 		back.setAttribute('class', 'moonback')
-		back.setAttribute('opacity', '0.02')
-		back.setAttribute('fill', '#FFFDE9')
 		back.setAttribute('d', "m88,0 a20,20 0 1,1 0,174 a20,20 0 1,1 0,-174")
 
 		svg.appendChild(back);
 
 		# Moon phase
 		path = document.createElementNS(xmlns, 'path')
-		path.setAttribute('opacity', 0.9)
-		path.setAttribute('fill', '#FFFDE9')
+		path.setAttribute('class', 'moonfront')
 		path.setAttribute('d', d);
 
 		svg.appendChild(path);
