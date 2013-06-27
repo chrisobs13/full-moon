@@ -1,5 +1,62 @@
+proper_ang = (big) ->
+	tmp = 0
+	if big > 0
+		tmp = big / 360.0
+		tmp = (tmp - (~~tmp)) * 360.0
+	else
+		tmp = Math.ceil(Math.abs(big / 360.0))
+		tmp = big + tmp * 360.0
+
+	tmp
+
 Date.prototype.getJulian = ()->
-	return (@ / 86400000) - (@.getTimezoneOffset() / 1440) + 2440587.5
+	month = @.getMonth()
+	day = @.getDate()
+	year = @.getFullYear()
+	zone = @.getTimezoneOffset() / 1440
+
+	mm = month
+	dd = day
+	yy = year
+
+	yyy = yy
+	mmm = mm
+	if mm < 3
+		yyy = yyy - 1
+		mmm = mm + 12
+
+	day = dd + zone + 0.5
+	a = ~~( yyy / 100 )
+	b = 2 - a + ~~( a / 4 )
+	jd = ~~( 365.25 * yyy ) + ~~( 30.6001 * ( mmm+ 1 ) ) + day + 1720994.5
+	jd + b if jd > 2299160.4999999
+
+Date.prototype.moonElong = ()->
+	jd = @.getJulian()
+	dr    = Math.PI / 180
+	rd    = 1 / dr
+	meeDT = Math.pow((jd - 2382148), 2) / (41048480 * 86400)
+	meeT  = (jd + meeDT - 2451545.0) / 36525
+	meeT2 = Math.pow(meeT, 2)
+	meeT3 = Math.pow(meeT, 3)
+	meeD  = 297.85 + (445267.1115 * meeT) - (0.0016300 * meeT2) + (meeT3 / 545868)
+	meeD  = (proper_ang meeD) * dr
+	meeM1 = 134.96 + (477198.8676 * meeT) + (0.0089970 * meeT2) + (meeT3 / 69699)
+	meeM1 = (proper_ang meeM1) * dr
+	meeM  = 357.53 + (35999.0503 * meeT)
+	meeM  = (proper_ang meeM) * dr
+
+	elong = meeD * rd + 6.29 * Math.sin( meeM1 )
+	elong = elong     - 2.10 * Math.sin( meeM )
+	elong = elong     + 1.27 * Math.sin( 2*meeD - meeM1 )
+	elong = elong     + 0.66 * Math.sin( 2*meeD )
+	elong = proper_ang elong
+	elong = Math.round elong
+
+	moonNum = ( ( elong + 6.43 ) / 360 ) * 28
+	moonNum = ~~( moonNum )
+
+	if moonNum is 28 then 0 else moonNum
 
 moon_day = (today)->
 
@@ -39,7 +96,9 @@ moon_day = (today)->
 		phase++
 
 	# 29.53059 days per lunar month
-	# return float from 0 to 1, where both are the new moon and 0.5 is the full moon
+	# return float from 0 to 1, where
+	# both are the new moon and 0.5
+	# is the full moon
 	return (((thisJD - oldJ) / 29.53059))
 
 draw_moon = (phase)->
@@ -130,4 +189,7 @@ draw_moon = (phase)->
 		svg.appendChild(path);
 
 $ ->
-	draw_moon( moon_day(new Date()) )
+	d = new Date(2013, 6, 27)
+
+	draw_moon( moon_day( d ) )
+
