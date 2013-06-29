@@ -188,8 +188,22 @@ draw_moon = (phase)->
 
 		svg.appendChild(path);
 
-$ ->
-	d = new Date(2013, 6, 27)
+next_full_moon = ( date )->
+	console.log "start"
+	thisDate = date
 
+	for i in [0..60] by 1
+		console.log thisDate
+		thisDate = new Date(date.getTime() + (24 * 60 * 60 * 1000 * i))
+		md = moon_day( thisDate )
+		if md > 0.4375 and md <= 0.5625
+			break
+
+	new Date( thisDate.getTime() + (24 * 60 * 60 * 1000) )
+$ ->
+	console.log "test"
+	d = new Date(2013, 5, 5)
+
+	console.log next_full_moon( d )
 	draw_moon( moon_day( d ) )
 
